@@ -1,7 +1,9 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TempConversion {
     static final Scanner input = new Scanner(System.in);
+
 
     public static double convertC2F(double celsius) {
         return (celsius * (9.0/5)) + 32.0;
@@ -23,6 +25,7 @@ public class TempConversion {
         return kelvin - 273.15;
     }
 
+    public static double convertK2F(double kelvin) { return convertC2F(convertK2C((kelvin))); }
     public static double getTemp(String unit) {
         System.out.printf("%-40s : ", String.format("Please enter °%s temperature to convert", unit));
         return Double.parseDouble(input.nextLine());
@@ -37,7 +40,40 @@ public class TempConversion {
     }
 
     public static void main(String[] args) {
+
         while(true) {
+            String fromUnit = getUnitChoice();
+            String toUnit = getUnitChoice();
+            double value = getTemp(fromUnit);
+
+            String myCase = fromUnit + toUnit;
+            double result;
+            switch(myCase.toUpperCase()) {
+                case "CF":
+                    result = convertC2F(value);
+                    break;
+                case "CK":
+                    result = convertC2K(value);
+                    break;
+                case "FC":
+                    result = convertF2C(value);
+                    break;
+                case "FK":
+                    result = convertF2K(value);
+                    break;
+                case "KC":
+                    result = convertK2C(value);
+                    break;
+                case "KF":
+                    result = convertK2F(value);
+                    break;
+                case "QQ":
+                    System.exit(0);
+                default:
+                    result = value;
+                    break;
+            }
+            System.out.printf("Result %f%s is %f%s%n", value, fromUnit, result, toUnit);
 
         }
     }

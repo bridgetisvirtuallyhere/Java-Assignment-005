@@ -3,25 +3,41 @@
 ## Part 1: - Tracing the Code
 As a new Java developer, you will be required to familiarize yourself with existing code before beginning to develop. That's what this section is about, developing your code tracing skills and familiarizing yourself with parts you may be able to use.
 * Scan through all the existing code and note what you have to work with.
-    * Method names
-    * Variables
+    * Method names 
+_**convertC2F, convertC2K, convertF2C, convertF2K, convertK2C, getTemp, getUnitChoice, main**_
+    * Variables 
+_**input**_
+  
 * Using Java terminology, break down every piece of the method **convertF2K**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier? 
+_**Public**_
+  * Is it a class or object method, how do you know? 
+_**It's an object method because it doesn't say class it says static, and it has parameters and returns something.**_
+   * What is its return type? 
+_**Double**_
+   * What parameters does it require, and what are the parameter(s) datatype(s)? 
+_**Fahrenheit in double form.**_
+   * Describe for me how the body of the method executes (i.e. its flow of execution). 
+_**It takes the fahrenheit and runs it through the convertF2C method and then runs it through convertC2K. So it's taking a double that is in fahrenheit converts it to celsius then converts that to kelvin.**_
+
 * Using Java terminology, break down method **getUnitChoice**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
+    * What is the access modifier? 
+_**Public**_
+* Is it a class or object method, how do you know?
+_**It's an object method because it doesn't say class it says static, and it has parameters and returns something.**_
     * What is its return type?
+**_String_**
     * What parameters does it require, and what are the parameter(s) datatype(s)?
+**_No parameters or parameter datatypes set_**
     * Describe for me how the body of the method executes (i.e. its flow of execution).
+**_If called in the main method it prints four formatted strings and returns the input of the scanner._**
     * How do the format specifiers differ than what you've seen before and what do they do?
+_**It looks like %-4s adds right-padded four spaces in the string before the colon, and the %40s adds left-padded 40 spaces**_ 
 
 ## Part 2: - Implement Missing Method: convertK2F
 This Part is aimed at teaching you to use methods and code you have to add new functionality to existing code. In this case you will add the missing conversion method, but you don't need to know math :-)
 * Hint: You can use existing methods!
+
 
 ## Part 3: - Switch it Up
 Part 3 is all about learning how to use the **switch** conditional statement, or the **enhanced switch** statement. You've learned about **if/else** now you will learn about **switch**.
